@@ -9,27 +9,38 @@
 </head>
 <body class="bg-gray-100 min-h-screen flex items-center justify-center">
 
-  <div class="bg-white p-6 rounded-2xl shadow-xl w-full max-w-xl">
+  <main class="bg-white p-6 sm:p-8 rounded-2xl shadow-xl w-full max-w-xl">
     <h1 class="text-2xl font-bold mb-4 text-center">Upload Your Photo</h1>
 
-    <div id="dropzone" class="border-2 border-dashed border-gray-300 rounded-xl p-6 text-center cursor-pointer hover:border-gray-500 transition">
+    <div
+      id="dropzone"
+      class="relative border-2 border-dashed border-gray-300 rounded-xl p-6 text-center cursor-pointer hover:border-gray-400 transition-all duration-200 bg-gray-50"
+      role="button"
+      tabindex="0"
+      aria-label="File upload area"
+    >
       <p id="placeholderText" class="text-gray-500">Drag & drop or click to upload</p>
-      <img id="previewImage" class="hidden w-full max-h-64 object-contain mt-4 mx-auto rounded-md" />
+      <img id="previewImage" alt="Uploaded preview" class="hidden w-full max-h-64 object-contain mt-4 mx-auto rounded-md shadow-md" />
+      <p id="fileName" class="mt-2 text-sm text-gray-600 font-medium hidden"></p> <!-- NEW -->
       <input type="file" id="fileInput" class="hidden" accept="image/*" />
     </div>
 
-    <ul class="text-sm text-gray-500 mt-4 list-disc list-inside">
+    <ul class="text-sm text-gray-500 mt-4 list-disc list-inside space-y-1">
       <li>Use high-quality images (JPG, PNG)</li>
       <li>Max file size: 5MB</li>
-      <li>No filters, good lighting</li>
+      <li>Clear background, good lighting</li>
     </ul>
 
     <div class="mt-6 text-right">
-      <button id="nextBtn" class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition disabled:opacity-50" disabled>
+      <button
+        id="nextBtn"
+        class="bg-blue-600 text-white px-5 py-2 rounded-lg hover:bg-blue-700 transition disabled:opacity-50"
+        disabled
+      >
         Next →
       </button>
     </div>
-  </div>
+  </main>
 
   <script src="script.js"></script>
 </body>
