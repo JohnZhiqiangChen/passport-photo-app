@@ -1,6 +1,4 @@
-body {
-  font-family: sans-serif;
-  padding: 2rem;
-  background-color: #f0f0f0;
-  color: #333;
+/* style.css */
+#dropzone.drag-active {
+  transition: background-color 0.3s ease;
 }
